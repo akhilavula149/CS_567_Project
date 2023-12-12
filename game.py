@@ -1,5 +1,3 @@
-# Simple Python Text-Based Game: Treasure Hunt
-
 # Importing necessary libraries
 import random
 import sys
