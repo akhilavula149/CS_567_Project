@@ -1,0 +1,24 @@
+# game.tstl - TSTL harness for the Treasure Hunt Game
+
+@import random
+@import game
+
+pool: <map> 1
+pool: <x> 5
+pool: <y> 5
+pool: <move> 10
+
+<map> := game.create_map(game.MAP_SIZE)
+game.place_treasure(<map>)
+
+<x> := int
+<y> := int
+<x> = random.randint(0, game.MAP_SIZE - 1)
+<y> = random.randint(0, game.MAP_SIZE - 1)
+
+<move> := (int, int)
+<move> = (<x>, <y>)
+game.update_map(<map>, <x>, <y>)
+
+assert not game.check_treasure(<map>, <x>, <y>)
+# Additional assertions as needed
